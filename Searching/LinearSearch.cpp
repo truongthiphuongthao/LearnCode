@@ -10,6 +10,7 @@ int linearSearch(int n, int arr[], int k){
 	return -1;
 }
 int main(){
+	freopen("data.txt", "r", stdin);
 	int arr[100];
 	int n;
 	cin >> n;
