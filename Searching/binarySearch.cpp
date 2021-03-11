@@ -2,15 +2,17 @@
 
 using namespace std;
 int binarySearch(int arr[], int l, int r, int k){
-	while(l <= r){
-		int mid = l + (r-l)/2;
+	if(r>=1){
+		int mid = r + (l-r)/2;
 		if(arr[mid] == k){
 			return mid;
 		}
 		if(arr[mid] > k){
-			r = mid - 1;
+			return binarySearch(arr, l, r-1, k);
 		}
-		else l = mid + 1;
+		else {
+			return binarySearch(arr, r+1, r, k);
+		}
 	}
 	return -1;
 }
