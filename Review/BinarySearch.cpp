@@ -1,19 +1,16 @@
 #include <iostream>
 using namespace std;
 
-// binarySearch recursion
 int IndexOfElement(int arr[], int l, int r, int k){
-	if( r>=1 ){
+	if(r >= l){
 		int mid = (l+r)/2;
 		if(arr[mid] == k){
 			return mid;
 		}
 		if(arr[mid] > k){
-			return IndexOfElement(arr, l, mid-1, k );
+			return IndexOfElement(arr, l, mid-1, k);
 		}
-		else {
-			return IndexOfElement(arr, mid+1, r, k);
-		}
+		return IndexOfElement(arr, mid+1, r, k);
 	}
 	return -1;
 }
