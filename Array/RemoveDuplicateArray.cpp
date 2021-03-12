@@ -14,7 +14,7 @@ int RemoveDuplicateArray(int arr[], int n, int arrNew[]){
 			}
 		}
 		if(check){ }
-		else {
+		else {                         
 			arrNew[nNew] = arr[i];
 			nNew++;
 		}
