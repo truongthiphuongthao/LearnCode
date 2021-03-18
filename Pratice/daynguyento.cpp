@@ -16,7 +16,17 @@ int KTNguyenTo(int n){
 	}	
 }
 
-int kiemtradaytangdan(int n, int arr[]){
+int daysotangdan(int pos, int brr[]){
+	for(int i=0; i<pos-1; i++){
+		if(brr[i] > brr[i+1]){
+			return 0;
+		}
+	}
+	return 1;
+}
+
+int songuyentotangdan(int n, int arr[]){
+	// lay mang luu lai so nguyen to
 	int brr[100];
 	int pos = 0;
 	for(int i=0; i<n; i++){
@@ -25,12 +35,8 @@ int kiemtradaytangdan(int n, int arr[]){
 			pos++;
 		}	
 	}
-	for(int i=0; i<pos-1; i++){
-		if(brr[i] > brr[i+1]){
-			return 0;
-		}
-	}
-	return 1;
+	int kiemtra = daysotangdan(pos, brr);
+	return kiemtra;
 }
 int main(){
 	int n;
@@ -39,8 +45,7 @@ int main(){
 	for(int i=0; i<n; i++){
 		cin >> arr[i];		
 	}
-	kiemtradaytangdan(n, arr);
-	int ketqua = kiemtradaytangdan(n, arr);
+	int ketqua = songuyentotangdan(n, arr);
 	if(ketqua != 1){
 		cout << "NO";
 	}
