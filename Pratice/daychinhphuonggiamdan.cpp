@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+int kiemtrasochinhphuong(int n){
+	for(int i=1; i<=n/2; i++){
+		if(i*i == n){
+			return 1;
+		}
+	}
+	return 0;
+}
+
+int daychinhphuonggiamdan(int arr[], int n){
+	int brr[100];
+	int pos = 0;
+	for(int i=0; i<n; i++){
+		if(kiemtrasochinhphuong(arr[i])){
+			brr[pos] = arr[i];
+			pos++;
+		}
+	}
+	
+	for(int i=0; i<pos-1; i++){
+		if(brr[i] < brr[i+1]){
+			return 0;
+		}
+	}
+	return 1;
+}
+int main(){
+	int n;
+	cin >> n;
+	int arr[100];
+	for(int i=0; i<n; i++){
+		cin >> arr[i];
+	}
+	int kq = daychinhphuonggiamdan(arr, n);
+	if(kq != 1){
+		cout << "NO";
+	}
+	else{
+		cout << "YES";
+	}
+}
+
