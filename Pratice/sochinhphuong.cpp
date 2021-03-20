@@ -2,10 +2,13 @@
 
 using namespace std;
 int kiemtrasochinhphuong(int n){
-	for(int i=1; i<=n/2; i++){
+	// 0 va 1 la o chinh phuong
+	int i=0;
+	while(i*i <= n){
 		if(i*i == n){
 			return 1;
 		}
+		i++;
 	}
 	return 0;
 }

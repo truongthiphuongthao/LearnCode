@@ -3,8 +3,8 @@
 using namespace std;
 
 int kiemtrasochinhphuong(int n){
-	int i = 1;
-	while(i<= n/2){
+	int i=0;
+	while(i*i <= n){
 		if(i*i == n){
 			return 1;
 		}

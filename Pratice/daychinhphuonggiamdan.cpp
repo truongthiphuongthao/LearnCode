@@ -2,10 +2,12 @@
 
 using namespace std;
 int kiemtrasochinhphuong(int n){
-	for(int i=1; i<=n/2; i++){
+	int i=0;
+	while(i*i <= n){
 		if(i*i == n){
 			return 1;
 		}
+		i++;
 	}
 	return 0;
 }
